@@ -1,10 +1,16 @@
 import { Component } from "react";
+import CVForm from "./components/CVForm";
 
 class App extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <CVForm />
+      </div>
+    );
   } 
 }
+
 export default App;
 
 // * What is the problem?
