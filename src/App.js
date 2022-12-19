@@ -12,16 +12,16 @@ class App extends Component {
 export default App;
 
 // * What is the problem?
-// - Write a program that takes user's input & generate a CV which can be downloaded as a PDf file.
+// - Write a program that takes user's input, realtime render Preview while typing & can be downloaded as a PDf file or it can Print it.
 
 // * What interface do we need?
 // - Input page
 // - Preview & Download page
 
 // * What functionality do we need?
-// - Get data
-// - Validate data
-// - Store Data
-// - Generate CV preview
-// - Generate PDF
-// - Autofill input as an example
+// - eventlistener input and render out realtime
+// - when it delete it should delete on the preview page too
+// - when press "new" Button, create new section below
+// - generate PDF
+// - print out 
+// - autofill input as an example
