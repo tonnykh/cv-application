@@ -1,11 +1,11 @@
 import { Component } from "react";
-import CVForm from "./components/CVForm";
+import Main from "./components/Main";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <CVForm />
+        <Main />
       </div>
     );
   } 
