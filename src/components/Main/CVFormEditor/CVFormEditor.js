@@ -1,13 +1,13 @@
 import Personal from "./components/Personal";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import { Component } from "react";
 
-class CVFormEditor extends Component {
-    render() {
+const CVFormEditor = (props) => {
+    const { onChangePersonal } = props;
+
         return (
             <div>
-                <Personal />
+                <Personal onChange={onChangePersonal}/>
                 <br />
                 <Education />
                 <br />
@@ -15,6 +15,5 @@ class CVFormEditor extends Component {
             </div>
         )
     }
-}
 
 export default CVFormEditor;
