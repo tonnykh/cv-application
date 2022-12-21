@@ -1,18 +1,20 @@
-import { Component } from "react";
+import Input from "./Input";
+import inputFields from "../../Utils/inputFields";
+import uniqid from 'uniqid'
 
-class Experience extends Component {
-    render() {
-        return (
-            <form>
-                <input type="text" placeholder="Position" />
-                <input type="text" placeholder="Company" />
-                <input type="text" placeholder="Your main occupation & daily tasks" />
-                <input type="text" placeholder="City" />
-                <input type="text" placeholder="From" />
-                <input type="text" placeholder="To" />
-            </form>
-        )
-    }
+const experience = inputFields.experience;
+experience.forEach(field => field.key = uniqid());
+
+const Experience = (props) => {
+    const{ onChange } = props;
+
+    return(
+        <form>
+            {experience.map((experienceInput) => {
+                return <Input placeholder={experienceInput.placeholder} name={experienceInput.name} onChange={onChange} key={experienceInput.key}/>
+            })}
+        </form>
+    )
 }
 
 export default Experience;
