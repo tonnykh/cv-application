@@ -7,7 +7,7 @@ const CVFormEditor = (props) => {
 
         return (
             <div>
-                <Personal onChange={onChangePersonal}/>
+                <Personal onChange={onChangePersonal} />
                 <br />
                 <Education />
                 <br />
