@@ -1,22 +1,45 @@
+import Input from "./Input";
+import uniqid from "uniqid"
+
+const inputFields = [
+    {   
+        name: 'first_name',
+        placeholder: 'First Name',
+    },
+    {   
+        name: 'last_name',
+        placeholder: 'Last Name',
+    },
+    {
+        name: 'address',
+        placeholder: 'Address',
+    },
+    {
+        name: 'email',
+        placeholder: 'Email',
+    },
+    {
+        name: 'phone_number',
+        placeholder: 'Phone Number',
+    },
+    {
+        name: 'description',
+        placeholder: 'Tell us something about yourself!',
+    }
+]
+
+inputFields.forEach(field => field.key = uniqid());
 
 const Personal = (props) => {
     const { onChange } = props;
 
     return (
         <form>
-            <input 
-                onChange={(e) => onChange(e)}
-                type="text" 
-                placeholder="First Name"
-            />
-            <input type="text" placeholder="Last Name"></input>
-            <input type="text" placeholder="Address"></input>
-            <input type="text" placeholder="Email"></input>
-            <input type="text" placeholder="Phone Number"></input>
-            <input type="text" placeholder="Tell us something about yourself!"></input>
+            {inputFields.map((inputField) => {
+                return <Input placeholder={inputField.placeholder} name={inputField.name} onChange={onChange}  key={inputField.key}/>
+            })}
         </form>
     )
-
 }
 
 export default Personal;
