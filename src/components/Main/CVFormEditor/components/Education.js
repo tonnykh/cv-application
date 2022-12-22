@@ -7,12 +7,12 @@ const education = inputFields.education;
 education.forEach(field => field.key = uniqid());
 
 const Education = (props) => {
-   const { onChange, onAdd, countEducation } = props;
+   const { onChange, onAddEducation, countEducation } = props;
 
-   let experienceItems = [];
+   let educationItems = [];
 
    for (let i = 0; i < countEducation; i++) {
-    experienceItems.push( education.map((educationInput) => {
+    educationItems.push( education.map((educationInput) => {
         return <Input placeholder={educationInput.placeholder} name={educationInput.name} onChange={onChange} key={educationInput.key}/>})
         );
    }
@@ -20,8 +20,8 @@ const Education = (props) => {
     return (
         <form>
             <h2>Education</h2>
-            {experienceItems}
-            <Button text="+Add" onClick={onAdd} />
+            {educationItems}
+            <Button text="+Add" onClick={onAddEducation} />
         </form>
     )
 }

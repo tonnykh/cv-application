@@ -32,7 +32,8 @@ class Main extends Component {
                 from: '',
                 to: '',
             },
-            countEducation: 1
+            countEducation: 1,
+            countExperience: 1
         }
 
         this.handleChangePersonalInfo = this.handleChangePersonalInfo.bind(this);
@@ -40,6 +41,7 @@ class Main extends Component {
         this.handleChangeExperience = this.handleChangeExperience.bind(this);
 
         this.handleAddEducation = this.handleAddEducation.bind(this);
+        this.handleAddExperience = this.handleAddExperience.bind(this);
     }
 
     handleChangePersonalInfo = (e) => {
@@ -83,8 +85,15 @@ class Main extends Component {
         this.setState({ countEducation: this.state.countEducation + 1 });
     }
 
+    handleAddExperience = (e) => {
+        e.preventDefault();
+        this.setState({ countExperience: this.state.countExperience + 1 });
+        
+        console.log(this.state.countExperience, 'COUNT EXP_____')
+    }
+
     render() {
-        const { personalInfo, education, experience, countEducation } = this.state;
+        const { personalInfo, education, experience, countEducation, countExperience } = this.state;
 
         return(
             <main>
@@ -93,8 +102,11 @@ class Main extends Component {
                     onChangePersonal={this.handleChangePersonalInfo} 
                     onChangeEducation={this.handleChangeEducation} 
                     onChangeExperience={this.handleChangeExperience} 
+                    
                     onAddEducation={this.handleAddEducation} 
+                    onAddExperience={this.handleAddExperience}
                     countEducation={countEducation} 
+                    countExperience={countExperience}
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 
