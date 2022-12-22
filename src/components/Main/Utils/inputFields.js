@@ -77,7 +77,7 @@ const inputFields = {
             name: 'to',
             placeholder: 'To'
         }
-    ] 
+    ]
 }
 
 export default inputFields;

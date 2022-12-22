@@ -8,41 +8,99 @@ class Main extends Component {
         super();
 
         this.state = {
-            info: {
+            personalInfo: {
                 first_name: '',
                 last_name: '',
                 address: '',
                 email: '',
                 phone_number: '',
                 description: ''
-            }
+            },
+            education: [{
+                university_name: '',
+                city: '',
+                degree: '',
+                subject: '',
+                from: '',
+                to: ''
+            }],
+            experience: {
+                position: '',
+                company: '',
+                task: '',
+                city: '',
+                from: '',
+                to: '',
+            },
+            countEducation: 1
         }
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangePersonalInfo = this.handleChangePersonalInfo.bind(this);
+        this.handleChangeEducation = this.handleChangeEducation.bind(this);
+        this.handleChangeExperience = this.handleChangeExperience.bind(this);
+
+        this.handleAddEducation = this.handleAddEducation.bind(this);
     }
 
-    handleChange = (e) => {
-        let newInfo = {
-            ...this.state.info,
+    handleChangePersonalInfo = (e) => {
+        let newPersonalInfo = {
+            ...this.state.personalInfo,
             [e.target.name]: e.target.value
         }
 
         this.setState({
-            info: newInfo         
+            personalInfo: newPersonalInfo         
         });
+        console.log(newPersonalInfo, 'NEWINFO');
 
-        console.log(e.target.name, '---NAME');
-        console.log(e.target.value, '---VALUE')
     };
 
+    handleChangeEducation = (e) => {
+        let newEducation = {
+            ...this.state.education,
+            [e.target.name]: e.target.value
+        }
+
+        this.setState({
+            education: newEducation
+        });
+    }
+
+    handleChangeExperience = (e) => {
+        let newExperience = {
+            ...this.state.experience,
+            [e.target.name]: e.target.value
+        }
+
+        this.setState({
+            experience: newExperience
+        });
+        console.log(newExperience, 'EXPERIENCE');
+    }
+
+    handleAddEducation = (e) => {
+        e.preventDefault();
+        this.setState({ countEducation: this.state.countEducation + 1 });
+    }
+
     render() {
-        const { info } = this.state;
+        const { personalInfo, education, experience, countEducation } = this.state;
 
         return(
             <main>
                 <Header />   
-                <CVFormEditor onChangePersonal={this.handleChange} cv={info}/>
-                <CVPreview cv={info} />
+                <CVFormEditor 
+                    onChangePersonal={this.handleChangePersonalInfo} 
+                    onChangeEducation={this.handleChangeEducation} 
+                    onChangeExperience={this.handleChangeExperience} 
+                    onAddEducation={this.handleAddEducation} 
+                    countEducation={countEducation} 
+                />
+                <CVPreview 
+                    personalInfo={personalInfo} 
+                    education={education} 
+                    experience={experience} 
+                />
             </main>
         )
     }

@@ -3,15 +3,20 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 
 const CVFormEditor = (props) => {
-    const { onChangePersonal } = props;
+    const { onChangePersonal, onChangeEducation, onChangeExperience, onAddEducation, countEducation } = props;
 
         return (
             <div>
                 <Personal onChange={onChangePersonal} />
                 <br />
-                <Education />
+                <Education 
+                    onChange={onChangeEducation} 
+                    onAdd={onAddEducation} 
+                    countEducation={countEducation} 
+                />
                 <br />
-                <Experience />
+                <Experience onChange={onChangeExperience}/>
+                <br />
             </div>
         )
     }

@@ -3,7 +3,6 @@ import inputFields from "../../Utils/inputFields";
 import uniqid from "uniqid"
 
 const personal = inputFields.personal;
-
 personal.forEach(field => field.key = uniqid());
 
 const Personal = (props) => {
@@ -11,8 +10,9 @@ const Personal = (props) => {
 
     return (
         <form>
-            {personal.map((inputField) => {
-                return <Input placeholder={inputField.placeholder} name={inputField.name} onChange={onChange}  key={inputField.key}/>
+            <h2>Personal Information</h2>
+            {personal.map((personalInput) => {
+                return <Input placeholder={personalInput.placeholder} name={personalInput.name} onChange={onChange} key={personalInput.key}/>
             })}
         </form>
     )

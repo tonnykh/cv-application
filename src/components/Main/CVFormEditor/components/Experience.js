@@ -10,6 +10,7 @@ const Experience = (props) => {
 
     return(
         <form>
+            <h2>Experience</h2>
             {experience.map((experienceInput) => {
                 return <Input placeholder={experienceInput.placeholder} name={experienceInput.name} onChange={onChange} key={experienceInput.key}/>
             })}
