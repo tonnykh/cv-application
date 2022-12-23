@@ -9,8 +9,14 @@ educationInputs.forEach(field => field.key = uniqid());
 const Education = (props) => {
     const { onChange, onAddEducation, education } = props;
 
-    let educationSection = educationInputs.map((educationInput) => {
-        return <Input placeholder={educationInput.placeholder} name={educationInput.name} onChange={(e) => onChange(e, education.id)} key={educationInput.key}/>
+    // let educationSection = educationInputs.map((educationInput) => {
+    //     return <Input placeholder={educationInput.placeholder} name={educationInput.name} onChange={(e) => onChange(e, education.id)} key={educationInput.key}/>
+    // })
+
+    let educationSections = education.map((educationItem) => {
+        return educationInputs.map((educationInput) => {
+            return <Input placeholder={educationInput.placeholder} name={educationInput.name} onChange={(e) => onChange(e, educationItem.id)} key={educationInput.key}/>
+        })
     })
 
     console.log(education, "EDU------");
@@ -18,7 +24,7 @@ const Education = (props) => {
     return (
         <form>
             <h2>Education</h2>
-            {educationSection}
+            {educationSections}
             <Button text="+Add" onClick={onAddEducation} />
         </form>
     )
