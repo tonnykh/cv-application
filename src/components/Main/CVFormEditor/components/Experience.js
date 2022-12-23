@@ -14,7 +14,7 @@ const Experience = (props) => {
 
     for (let i = 0; i < countExperience; i++) {
         experienceItems.push( experience.map((experienceInput) => {
-            return <Input placeholder={experienceInput.placeholder} name={experienceInput.name} onChange={onChange} key={experienceInput.key}/>})
+            return <Input placeholder={experienceInput.placeholder} name={experienceInput.name} onChange={(e) => onChange(e, experienceInput.id)} key={experienceInput.key}/>})
             );
     }
     return(

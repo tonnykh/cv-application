@@ -1,6 +1,8 @@
 
 const Education = (props) => {
     const { education } = props;
+    console.log(education,"__EDUC___VIEW")
+
 
     return (
         <section>

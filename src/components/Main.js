@@ -75,15 +75,29 @@ class Main extends Component {
 
     };
 
-    handleChangeEducation = (e) => {
+    handleChangeEducation = (e, id) => {
 
-        this.setState(prevState => ({
-            education: {
-                ...prevState.education,
-                [e.target.name]: e.target.value
+        // this.setState(prevState => ({
+        //     education: {
+        //         ...prevState.education,
+        //         [e.target.name]: e.target.value
+        //     }
+        // }))
+     
+
+        const newEducation = this.state.education.map(educationItem => {
+            if (educationItem.id === id ) {
+                return { ...educationItem, [e.target.name] : e.target.value };
+            } else {
+                return educationItem;
             }
-        }))
+        })
+ 
+        this.setState({
+            education: newEducation
+        }, () => console.log(this.state.education, '1----EDUCATION___'));
 
+        console.log(id, 'TARGET____ID');
         console.log(this.state.education, "EDUCATION______");
     }
 
