@@ -4,13 +4,13 @@ import Sidebar from "./components/Sidebar";
 
 const CVPreview = (props) => {
 
-    const { personalInfo, education, experience, skills } = props;
-    console.log(personalInfo, 'CV');
+    const { personalInfo, education, experience } = props;
+    console.log(education, 'CVPreview-EDUCATION---');
 
     return(
         <div>
             <Header personalInfo={personalInfo} />
-            <Sidebar personalInfo={personalInfo} education={education} skills={skills} />
+            <Sidebar personalInfo={personalInfo} education={education} />
             <MainContent personalInfo={personalInfo} experience={experience} />
         </div>
     )

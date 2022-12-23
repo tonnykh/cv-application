@@ -4,10 +4,15 @@ import Education from "./Education";
 const Sidebar = (props) => {
     const { personalInfo, education } = props;
 
+    const educationItems = education.map((educationItem) => {
+        return <Education key={educationItem.id} educationItem={educationItem} />
+    })
+
     return (
         <div>
             <Contact personalInfo={personalInfo} />
-            <Education education={education} />
+            <h3>EDUCATION</h3>
+            {educationItems}
         </div>
     )
 }

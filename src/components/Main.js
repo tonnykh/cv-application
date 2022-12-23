@@ -76,15 +76,6 @@ class Main extends Component {
     };
 
     handleChangeEducation = (e, id) => {
-
-        // this.setState(prevState => ({
-        //     education: {
-        //         ...prevState.education,
-        //         [e.target.name]: e.target.value
-        //     }
-        // }))
-     
-
         const newEducation = this.state.education.map(educationItem => {
             if (educationItem.id === id ) {
                 return { ...educationItem, [e.target.name] : e.target.value };

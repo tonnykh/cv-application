@@ -1,17 +1,15 @@
 
 const Education = (props) => {
-    const { education } = props;
-    console.log(education,"__EDUC___VIEW")
-
+    const { educationItem } = props;
+    console.log(educationItem,"__EDUC___VIEW")
 
     return (
         <section>
-            <h3>EDUCATION</h3>
-            <p>{education.degree}</p>
-            <p>{education.subject}</p>
-            <p>{education.university_name}</p>
-            <p>{education.city}</p>
-            <p><span>{education.from}</span>-{education.to}</p>
+            <p>{educationItem.degree}</p>
+            <p>{educationItem.subject}</p>
+            <p>{educationItem.university_name}</p>
+            <p>{educationItem.city}</p>
+            <p><span>{educationItem.from}</span>-{educationItem.to}</p>
         </section>
     )
 }
