@@ -1,15 +1,13 @@
 
 const Experience = (props) => {
-
-    const { experience } = props
-    console.log(experience,"__EXPERIENCE___")
+    const { experienceItem } = props
+    console.log(experienceItem, "__EXPERIENCE___")
 
     return (
         <section>
-            <h3>WORK EXPERIENCE</h3>
-            <p>{experience.position}</p>
-            <p>{experience.company} | {experience.city} | {experience.from}-{experience.to}</p>
-            <p>{experience.task}</p>
+            <p>{experienceItem.position}</p>
+            <p>{experienceItem.company} | {experienceItem.city} | {experienceItem.from}-{experienceItem.to}</p>
+            <p>{experienceItem.task}</p>
         </section>
     )
 }

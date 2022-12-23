@@ -31,14 +31,17 @@ class Main extends Component {
                 }
             ],
 
-            experience: {
-                position: '',
-                company: '',
-                task: '',
-                city: '',
-                from: '',
-                to: '',
-            },
+            experience: [
+                {
+                    position: '',
+                    company: '',
+                    task: '',
+                    city: '',
+                    from: '',
+                    to: '',
+                    id: uniqid()
+                }
+            ],
 
             newEducation: {
                 university_name: '',
@@ -50,8 +53,15 @@ class Main extends Component {
                 id: uniqid()
             },
 
-            countEducation: 1,
-            countExperience: 1
+            newExperience: {
+                position: '',
+                company: '',
+                task: '',
+                city: '',
+                from: '',
+                to: '',
+                id: uniqid()
+            }
         }
 
         this.handleChangePersonalInfo = this.handleChangePersonalInfo.bind(this);
@@ -73,11 +83,11 @@ class Main extends Component {
         });
         console.log(newPersonalInfo, 'NEWINFO');
 
-    };
+    };  
 
     handleChangeEducation = (e, id) => {
         const newEducation = this.state.education.map(educationItem => {
-            if (educationItem.id === id ) {
+            if ( educationItem.id === id ) {
                 return { ...educationItem, [e.target.name] : e.target.value };
             } else {
                 return educationItem;
@@ -92,16 +102,28 @@ class Main extends Component {
         console.log(this.state.education, "EDUCATION______");
     }
 
-    handleChangeExperience = (e) => {
-        let newExperience = {
-            ...this.state.experience,
-            [e.target.name]: e.target.value
-        }
+    handleChangeExperience = (e, id) => {
+        const newExperience = this.state.experience.map(experienceItem => {
+            if ( experienceItem.id === id ) {
+                return { ...experienceItem, [e.target.name] : e.target.value }; 
+            } else {
+                return experienceItem;
+            }
+        })
 
         this.setState({
             experience: newExperience
-        });
-        console.log(newExperience, 'EXPERIENCE');
+        }, () => console.log(this.state.experience, '1---EXPERIENCE___'));
+
+        // let newExperience = {
+        //     ...this.state.experience,
+        //     [e.target.name]: e.target.value
+        // }
+
+        // this.setState({
+        //     experience: newExperience
+        // });
+        // console.log(newExperience, 'EXPERIENCE');
     }
 
     handleAddEducation = (e) => {
@@ -114,19 +136,28 @@ class Main extends Component {
             newEducation: {
               ...prevState.newEducation, id: uniqid()
             }
-            }), () =>  console.log(Object.keys(this.state.education).length) 
-        );        
+        }), () =>  console.log(Object.keys(this.state.education).length) );        
     }
  
     handleAddExperience = (e) => {
         e.preventDefault();
-        this.setState({ countExperience: this.state.countExperience + 1 });
+
+        this.setState(prevState => ({
+            experience: [
+                ...prevState.experience, prevState.newExperience
+            ],
+            newExperience: {
+                ...prevState.newExperience, id: uniqid()
+            }
+        }), () => console.log(Object.keys(this.state.education).length) );
+
+        // this.setState({ countExperience: this.state.countExperience + 1 });
         
-        console.log(this.state.countExperience, 'COUNT EXP_____')
+        // console.log(this.state.countExperience, 'COUNT EXP_____')
     }
 
     render() {
-        const { personalInfo, education, experience, countEducation, countExperience } = this.state;
+        const { personalInfo, education, experience } = this.state;
 
         return(
             <main>
@@ -138,10 +169,9 @@ class Main extends Component {
 
                     onAddEducation={this.handleAddEducation} 
                     onAddExperience={this.handleAddExperience}
-                    countEducation={countEducation} 
-                    countExperience={countExperience}
 
                     education={education}
+                    experience={experience}
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 

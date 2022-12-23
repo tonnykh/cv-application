@@ -3,7 +3,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 
 const CVFormEditor = (props) => {
-    const { onChangePersonal, onChangeEducation, onChangeExperience, onAddEducation, onAddExperience, countEducation, countExperience, education } = props;
+    const { onChangePersonal, onChangeEducation, onChangeExperience, onAddEducation, onAddExperience, education, experience } = props;
 
         return (
             <div>
@@ -12,15 +12,14 @@ const CVFormEditor = (props) => {
                 <Education 
                     onChange={onChangeEducation} 
                     onAddEducation={onAddEducation} 
-                    countEducation={countEducation}
+                    // countEducation={countEducation}
                     education={education}
                 />
                 <br />
                 <Experience 
                     onChange={onChangeExperience}
-                    countExperience={countExperience}
                     onAddExperience={onAddExperience} 
-
+                    experience={experience}
                 />
                 <br />
             </div>
