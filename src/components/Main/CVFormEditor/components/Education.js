@@ -3,24 +3,22 @@ import inputFields from '../../Utils/inputFields';
 import uniqid from 'uniqid';
 import Button from '../../Utils/Button';
 
-const education = inputFields.education;
-education.forEach(field => field.key = uniqid());
+const educationInputs = inputFields.education;
+educationInputs.forEach(field => field.key = uniqid());
 
 const Education = (props) => {
-   const { onChange, onAddEducation, countEducation } = props;
+    const { onChange, onAddEducation, education } = props;
 
-   let educationItems = [];
+    let educationSection = educationInputs.map((educationInput) => {
+        return <Input placeholder={educationInput.placeholder} name={educationInput.name} onChange={(e) => onChange(e, education.id)} key={educationInput.key}/>
+    })
 
-   for (let i = 0; i < countEducation; i++) {
-    educationItems.push( education.map((educationInput) => {
-        return <Input placeholder={educationInput.placeholder} name={educationInput.name} onChange={onChange} key={educationInput.key}/>})
-        );
-   }
+    console.log(education, "EDU------");
 
     return (
         <form>
             <h2>Education</h2>
-            {educationItems}
+            {educationSection}
             <Button text="+Add" onClick={onAddEducation} />
         </form>
     )

@@ -2,6 +2,8 @@ import { Component } from "react";
 import Header from "./Main/Header/Header";
 import CVFormEditor from "./Main/CVFormEditor/index";
 import CVPreview from "./Main/CVPreview/CVPreview";
+import uniqid from "uniqid";
+
 
 class Main extends Component {
     constructor() {
@@ -16,14 +18,19 @@ class Main extends Component {
                 phone_number: '',
                 description: ''
             },
-            education: [{
-                university_name: '',
-                city: '',
-                degree: '',
-                subject: '',
-                from: '',
-                to: ''
-            }],
+
+            education: [
+                {
+                    university_name: '',
+                    city: '',
+                    degree: '',
+                    subject: '',
+                    from: '',
+                    to: '',
+                    id: uniqid()
+                }
+            ],
+
             experience: {
                 position: '',
                 company: '',
@@ -32,6 +39,17 @@ class Main extends Component {
                 from: '',
                 to: '',
             },
+
+            newEducation: {
+                university_name: '',
+                city: '',
+                degree: '',
+                subject: '',
+                from: '',
+                to: '',
+                id: uniqid()
+            },
+
             countEducation: 1,
             countExperience: 1
         }
@@ -58,14 +76,15 @@ class Main extends Component {
     };
 
     handleChangeEducation = (e) => {
-        let newEducation = {
-            ...this.state.education,
-            [e.target.name]: e.target.value
-        }
 
-        this.setState({
-            education: newEducation
-        });
+        this.setState(prevState => ({
+            education: {
+                ...prevState.education,
+                [e.target.name]: e.target.value
+            }
+        }))
+
+        console.log(this.state.education, "EDUCATION______");
     }
 
     handleChangeExperience = (e) => {
@@ -82,9 +101,18 @@ class Main extends Component {
 
     handleAddEducation = (e) => {
         e.preventDefault();
-        this.setState({ countEducation: this.state.countEducation + 1 });
+    
+        this.setState(prevState => ({
+            education: [
+              ...prevState.education, prevState.newEducation
+            ],
+            newEducation: {
+              ...prevState.newEducation, id: uniqid()
+            }
+            }), () =>  console.log(Object.keys(this.state.education).length) 
+        );        
     }
-
+ 
     handleAddExperience = (e) => {
         e.preventDefault();
         this.setState({ countExperience: this.state.countExperience + 1 });
@@ -102,11 +130,13 @@ class Main extends Component {
                     onChangePersonal={this.handleChangePersonalInfo} 
                     onChangeEducation={this.handleChangeEducation} 
                     onChangeExperience={this.handleChangeExperience} 
-                    
+
                     onAddEducation={this.handleAddEducation} 
                     onAddExperience={this.handleAddExperience}
                     countEducation={countEducation} 
                     countExperience={countExperience}
+
+                    education={education}
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 
