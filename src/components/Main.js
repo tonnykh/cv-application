@@ -71,6 +71,7 @@ class Main extends Component {
         this.handleAddExperience = this.handleAddExperience.bind(this);
 
         this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
+        this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
     }
 
     handleChangePersonalInfo = (e) => {
@@ -144,23 +145,25 @@ class Main extends Component {
     }
 
     handleDeleteEducation = (id) => {
-        // e.preventDefault();
-
-
-        const deleteEducation = this.state.education.filter(
+        const newEducation = this.state.education.filter(
             (educationItem) => educationItem.id !== id
         )
 
-
-
         this.setState({
-            education: [...deleteEducation]
-        }, () => console.log(deleteEducation, "EduCation_____00")
+            education: [...newEducation]
+        }, () => console.log(newEducation, "EduCation_____00")
         )
-
-        console.log("DELETE---EDUCATIOn---", deleteEducation);
     }
 
+    handleDeleteExperience = (id) => {
+        const newExperience = this.state.experience.filter(
+            (experienceItem) => experienceItem.id !== id        
+        )
+
+        this.setState({
+            experience: [...newExperience]
+        })
+    }
 
     render() {
         const { personalInfo, education, experience } = this.state;
@@ -180,6 +183,7 @@ class Main extends Component {
                     experience={experience}
 
                     onDeleteEducation={this.handleDeleteEducation}
+                    onDeleteExperience={this.handleDeleteExperience}
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 

@@ -3,7 +3,18 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 
 const CVFormEditor = (props) => {
-    const { onChangePersonal, onChangeEducation, onChangeExperience, onAddEducation, onAddExperience, education, experience, onDeleteEducation, onDeleteExperience } = props;
+    const { 
+        onChangePersonal, 
+        onChangeEducation, 
+        onChangeExperience, 
+        onAddEducation, 
+        onAddExperience, 
+        education, 
+        experience, 
+        
+        onDeleteEducation, 
+        onDeleteExperience 
+    } = props;
 
 
     console.log(education, "EDITOR EDUCATION____")
@@ -22,7 +33,7 @@ const CVFormEditor = (props) => {
                 <Experience 
                     onChange={onChangeExperience}
                     onAddExperience={onAddExperience} 
-                    
+
                     experience={experience}
                     onDeleteExperience={onDeleteExperience}
                 />
