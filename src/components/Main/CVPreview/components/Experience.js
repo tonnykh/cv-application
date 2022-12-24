@@ -5,9 +5,9 @@ const Experience = (props) => {
 
     return (
         <section>
-            <p>{experienceItem.position}</p>
-            <p>{experienceItem.company} | {experienceItem.city} | {experienceItem.from}-{experienceItem.to}</p>
-            <p>{experienceItem.task}</p>
+            <p>{experienceItem.position} </p>
+            <p>{experienceItem.company} | {experienceItem.city} | {experienceItem.from}-{experienceItem.to} </p>
+            <p>{experienceItem.task} </p>
         </section>
     )
 }

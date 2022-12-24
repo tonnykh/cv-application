@@ -4,7 +4,6 @@ import CVFormEditor from "./Main/CVFormEditor/index";
 import CVPreview from "./Main/CVPreview/CVPreview";
 import uniqid from "uniqid";
 
-
 class Main extends Component {
     constructor() {
         super();
@@ -70,6 +69,8 @@ class Main extends Component {
 
         this.handleAddEducation = this.handleAddEducation.bind(this);
         this.handleAddExperience = this.handleAddExperience.bind(this);
+
+        this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
     }
 
     handleChangePersonalInfo = (e) => {
@@ -114,16 +115,6 @@ class Main extends Component {
         this.setState({
             experience: newExperience
         }, () => console.log(this.state.experience, '1---EXPERIENCE___'));
-
-        // let newExperience = {
-        //     ...this.state.experience,
-        //     [e.target.name]: e.target.value
-        // }
-
-        // this.setState({
-        //     experience: newExperience
-        // });
-        // console.log(newExperience, 'EXPERIENCE');
     }
 
     handleAddEducation = (e) => {
@@ -150,11 +141,20 @@ class Main extends Component {
                 ...prevState.newExperience, id: uniqid()
             }
         }), () => console.log(Object.keys(this.state.education).length) );
-
-        // this.setState({ countExperience: this.state.countExperience + 1 });
-        
-        // console.log(this.state.countExperience, 'COUNT EXP_____')
     }
+
+    handleDeleteEducation = (id) => {
+        // e.preventDefault();
+
+        const deleteEducation = this.state.education.filter(
+            (educationItem) => educationItem.id !== id
+        )
+
+        this.setState({
+            education: [...deleteEducation]
+        })
+    }
+
 
     render() {
         const { personalInfo, education, experience } = this.state;
@@ -172,6 +172,8 @@ class Main extends Component {
 
                     education={education}
                     experience={experience}
+
+                    onDeleteEducation={this.onDeleteEducation}
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 
