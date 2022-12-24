@@ -14,6 +14,7 @@ const CVFormEditor = (props) => {
                 <Education 
                     onChange={onChangeEducation} 
                     onAddEducation={onAddEducation} 
+
                     onDeleteEducation={onDeleteEducation}
                     education={education}
                 />
@@ -21,6 +22,7 @@ const CVFormEditor = (props) => {
                 <Experience 
                     onChange={onChangeExperience}
                     onAddExperience={onAddExperience} 
+                    
                     experience={experience}
                     onDeleteExperience={onDeleteExperience}
                 />

@@ -146,13 +146,19 @@ class Main extends Component {
     handleDeleteEducation = (id) => {
         // e.preventDefault();
 
+
         const deleteEducation = this.state.education.filter(
             (educationItem) => educationItem.id !== id
         )
 
+
+
         this.setState({
             education: [...deleteEducation]
-        })
+        }, () => console.log(deleteEducation, "EduCation_____00")
+        )
+
+        console.log("DELETE---EDUCATIOn---", deleteEducation);
     }
 
 
@@ -173,7 +179,7 @@ class Main extends Component {
                     education={education}
                     experience={experience}
 
-                    onDeleteEducation={this.onDeleteEducation}
+                    onDeleteEducation={this.handleDeleteEducation}
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 
