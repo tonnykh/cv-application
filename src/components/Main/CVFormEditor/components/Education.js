@@ -12,7 +12,8 @@ const Education = (props) => {
                     <EducationItem 
                         onChange={onChange} 
                         id={educationItem.id} 
-                        key={educationItem.id} 
+                        key={educationItem.id}
+                        value={educationItem}
                     />
                     <Button 
                         text="Delete" 

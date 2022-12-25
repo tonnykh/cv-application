@@ -4,7 +4,8 @@ const Input = (props) => {
     const { 
         name,
         onChange,
-        placeholder
+        placeholder,
+        value,
     } = props 
 
     return (
@@ -13,6 +14,7 @@ const Input = (props) => {
             name={name}
             placeholder={placeholder}
             onChange={(e) => onChange(e)}
+            value={value?.[name]}
         />
     )
 }

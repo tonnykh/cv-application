@@ -3,6 +3,7 @@ import Header from "./Main/Header/Header";
 import CVFormEditor from "./Main/CVFormEditor/index";
 import CVPreview from "./Main/CVPreview/CVPreview";
 import uniqid from "uniqid";
+import exampleData from "./Main/Utils/exampleData";
 
 class Main extends Component {
     constructor() {
@@ -79,6 +80,8 @@ class Main extends Component {
             ...this.state.personalInfo,
             [e.target.name]: e.target.value
         }
+
+        console.log(e.target.value, '___VALUE___');
 
         this.setState({
             personalInfo: newPersonalInfo         
@@ -165,12 +168,22 @@ class Main extends Component {
         })
     }
 
+    handleAutofill = (e) => {
+        this.setState({
+            ...this.state,
+            personalInfo: exampleData.personalInfo,
+            education: exampleData.education,
+            experience: exampleData.experience,
+        })
+    }
+
     render() {
         const { personalInfo, education, experience } = this.state;
 
         return(
             <main>
-                <Header />   
+                <Header autofill={this.handleAutofill}
+/>   
                 <CVFormEditor 
                     onChangePersonal={this.handleChangePersonalInfo} 
                     onChangeEducation={this.handleChangeEducation} 
@@ -184,6 +197,7 @@ class Main extends Component {
 
                     onDeleteEducation={this.handleDeleteEducation}
                     onDeleteExperience={this.handleDeleteExperience}
+
                 />
                 <CVPreview 
                     personalInfo={personalInfo} 

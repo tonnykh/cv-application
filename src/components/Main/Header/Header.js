@@ -1,13 +1,14 @@
-import { Component } from "react";
+import Button from "../Utils/Button";
 
-class Header extends Component {
-    render() {
-        return(
-            <header>
-                <h1>CV Builder</h1>
-            </header>
-        )
-    }
+const Header = (props) =>  {
+    const { autofill } = props;
+
+    return(
+        <header>
+            <h1>CV Builder</h1>
+            <Button text="Autofill" onClick={autofill} />
+        </header>
+    )
 }
 
 export default Header;
