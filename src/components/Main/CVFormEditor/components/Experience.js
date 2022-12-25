@@ -6,13 +6,16 @@ const Experience = (props) => {
     const { onChange, onAddExperience, experience, onDeleteExperience } = props;
 
     const experienceItems = experience.map((experienceItem) => {
+
+        console.log(experienceItem, "EXPERIENCE__ITEM");
         return experience.length > 1 ?
         (
             <div key={experienceItem.id}>
                 <ExperienceItem
-                    onChange={onChange}
-                    id={experienceItem.id}
-                    key={experienceItem.id}
+                        onChange={onChange}
+                        id={experienceItem.id}
+                        key={experienceItem.id}
+                        value={experienceItem}
                 />
                 <Button
                     text="Delete"

@@ -10,8 +10,9 @@ const CVFormEditor = (props) => {
         onAddEducation, 
         onAddExperience, 
         education, 
-        experience, 
-        
+        experience,
+        personalInfo,
+
         onDeleteEducation, 
         onDeleteExperience 
     } = props;
@@ -20,7 +21,10 @@ const CVFormEditor = (props) => {
     console.log(education, "EDITOR EDUCATION____")
         return (
             <div>
-                <Personal onChange={onChangePersonal} />
+                <Personal
+                    onChange={onChangePersonal}
+                    personalInfo={personalInfo}
+                />
                 <br />
                 <Education 
                     onChange={onChangeEducation} 

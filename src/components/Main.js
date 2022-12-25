@@ -182,8 +182,9 @@ class Main extends Component {
 
         return(
             <main>
-                <Header autofill={this.handleAutofill}
-/>   
+                <Header
+                    autofill={this.handleAutofill}
+                />   
                 <CVFormEditor 
                     onChangePersonal={this.handleChangePersonalInfo} 
                     onChangeEducation={this.handleChangeEducation} 
@@ -194,6 +195,8 @@ class Main extends Component {
 
                     education={education}
                     experience={experience}
+                    personalInfo={personalInfo}
+
 
                     onDeleteEducation={this.handleDeleteEducation}
                     onDeleteExperience={this.handleDeleteExperience}

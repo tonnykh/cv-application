@@ -1,6 +1,6 @@
 
 const inputFields = {
-    personal: [
+    personalInfo: [
         {   
             name: 'first_name',
             placeholder: 'First Name',

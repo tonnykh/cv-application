@@ -6,14 +6,15 @@ const experienceInputs = inputFields.experience;
 experienceInputs.forEach(field => field.key = uniqid());
 
 const ExperienceItem = (props) => {
-    const { onChange, id } = props;
+    const { onChange, id, value } = props;
 
     return experienceInputs.map((experienceInput) => {
         return <Input 
-                    placeholder={experienceInput.placeholder}
-                    name={experienceInput.name}
-                    onChange={(e) => onChange(e, id)}
-                    key={experienceInput.key}
+            placeholder={experienceInput.placeholder}
+            name={experienceInput.name}
+            onChange={(e) => onChange(e, id)}
+            key={experienceInput.key}
+            value={value}
                 />
     })
 }
