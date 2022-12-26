@@ -2,7 +2,6 @@ import Input from "./Input"
 import inputFields from "../../Utils/inputFields"
 import uniqid from 'uniqid';
 
-import exampleData from "../../Utils/exampleData";
 
 const educationInputs = inputFields.education;
 educationInputs.forEach(field => field.key = uniqid());
@@ -12,11 +11,12 @@ const EducationItem = (props) => {
 
    return educationInputs.map((educationInput) => {
         return <Input 
-                    placeholder={educationInput.placeholder} 
-                    name={educationInput.name} 
-                    onChange={(e) => onChange(e, id)} 
-                    key={educationInput.key} 
-                    value={value}
+            placeholder={educationInput.placeholder}
+            name={educationInput.name}
+            onChange={(e) => onChange(e, id)}
+            key={educationInput.key}
+            value={value}
+            type={educationInput.type}
                 /> 
     })
 }

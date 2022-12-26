@@ -20,6 +20,7 @@ const Personal = (props) => {
                     onChange={(e) => onChange(e, personalInput)}
                     key={personalInput.key}
                     value={personalInfo} 
+                    type={personalInput.type}
                     // id={personalInput}
                     />
             })}

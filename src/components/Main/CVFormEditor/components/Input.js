@@ -6,25 +6,28 @@ const Input = (props) => {
         onChange,
         placeholder,
         value,
+        type = 'text'
     } = props 
 
     return (
-        <input 
-            type="text"
-            name={name}
-            placeholder={placeholder}
-            onChange={(e) => onChange(e)}
-            value={value?.[name]}
-        />
+
+        (type === 'textarea') ? (
+            <textarea
+                name={name}
+                placeholder={placeholder}
+                onChange={(e) => onChange(e)}
+                value={value?.[name]}
+            />
+        ): (
+            <input 
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                onChange={(e) => onChange(e)}
+                value={value?.[name]}
+            />
+        )
     )
 }
 
 export default Input;
-
-
-// setCv((prevState) => {
-//     const newExperience = prevState.experience.filter(
-//       (experienceItem) => experienceItem.id !== id
-//     )
-//     return { ...prevState, experience: [...newExperience] }
-//   })

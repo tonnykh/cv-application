@@ -15,6 +15,7 @@ const ExperienceItem = (props) => {
             onChange={(e) => onChange(e, id)}
             key={experienceInput.key}
             value={value}
+            type={experienceInput.type}
                 />
     })
 }

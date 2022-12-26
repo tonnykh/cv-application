@@ -73,6 +73,7 @@ class Main extends Component {
 
         this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
         this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
+
     }
 
     handleChangePersonalInfo = (e) => {
@@ -84,16 +85,16 @@ class Main extends Component {
         console.log(e.target.value, '___VALUE___');
 
         this.setState({
-            personalInfo: newPersonalInfo         
+            personalInfo: newPersonalInfo
         });
         console.log(newPersonalInfo, 'NEWINFO');
 
-    };  
+    };
 
     handleChangeEducation = (e, id) => {
         const newEducation = this.state.education.map(educationItem => {
-            if ( educationItem.id === id ) {
-                return { ...educationItem, [e.target.name] : e.target.value };
+            if (educationItem.id === id) {
+                return { ...educationItem, [e.target.name]: e.target.value };
             } else {
                 return educationItem;
             }
@@ -109,8 +110,8 @@ class Main extends Component {
 
     handleChangeExperience = (e, id) => {
         const newExperience = this.state.experience.map(experienceItem => {
-            if ( experienceItem.id === id ) {
-                return { ...experienceItem, [e.target.name] : e.target.value }; 
+            if (experienceItem.id === id) {
+                return { ...experienceItem, [e.target.name]: e.target.value };
             } else {
                 return experienceItem;
             }
@@ -126,12 +127,12 @@ class Main extends Component {
     
         this.setState(prevState => ({
             education: [
-              ...prevState.education, prevState.newEducation
+                ...prevState.education, prevState.newEducation
             ],
             newEducation: {
-              ...prevState.newEducation, id: uniqid()
+                ...prevState.newEducation, id: uniqid()
             }
-        }), () =>  console.log(Object.keys(this.state.education).length) );        
+        }), () => console.log(Object.keys(this.state.education).length));
     }
  
     handleAddExperience = (e) => {
@@ -144,7 +145,7 @@ class Main extends Component {
             newExperience: {
                 ...prevState.newExperience, id: uniqid()
             }
-        }), () => console.log(Object.keys(this.state.education).length) );
+        }), () => console.log(Object.keys(this.state.education).length));
     }
 
     handleDeleteEducation = (id) => {
@@ -160,7 +161,7 @@ class Main extends Component {
 
     handleDeleteExperience = (id) => {
         const newExperience = this.state.experience.filter(
-            (experienceItem) => experienceItem.id !== id        
+            (experienceItem) => experienceItem.id !== id
         )
 
         this.setState({
@@ -176,6 +177,9 @@ class Main extends Component {
             experience: exampleData.experience,
         })
     }
+
+   
+
 
     render() {
         const { personalInfo, education, experience } = this.state;
@@ -197,9 +201,9 @@ class Main extends Component {
                     experience={experience}
                     personalInfo={personalInfo}
 
-
                     onDeleteEducation={this.handleDeleteEducation}
                     onDeleteExperience={this.handleDeleteExperience}
+
 
                 />
                 <CVPreview 
