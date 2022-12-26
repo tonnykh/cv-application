@@ -4,6 +4,7 @@ const exampleData = {
     personalInfo: {
         first_name: 'Nikola',
         last_name: 'Tesla',
+        professional_title: 'Senior Software Developer',
         address: 'San Francisco, US',
         email: 'nikolatesla@gmail.com',
         phone_number: '777-777-7777',

@@ -4,6 +4,10 @@ import CVFormEditor from "./Main/CVFormEditor/index";
 import CVPreview from "./Main/CVPreview/CVPreview";
 import uniqid from "uniqid";
 import exampleData from "./Main/Utils/exampleData";
+import '../styles/Main.css'
+import '../styles/Header.css'
+import '../styles/CVFormEditor.css'
+import '../styles/CVPreview.css'
 
 class Main extends Component {
     constructor() {
@@ -13,6 +17,7 @@ class Main extends Component {
             personalInfo: {
                 first_name: '',
                 last_name: '',
+                professional_title: '',
                 address: '',
                 email: '',
                 phone_number: '',
@@ -189,6 +194,11 @@ class Main extends Component {
                 <Header
                     autofill={this.handleAutofill}
                 />   
+                <CVPreview 
+                    personalInfo={personalInfo} 
+                    education={education} 
+                    experience={experience} 
+                />
                 <CVFormEditor 
                     onChangePersonal={this.handleChangePersonalInfo} 
                     onChangeEducation={this.handleChangeEducation} 
@@ -203,13 +213,6 @@ class Main extends Component {
 
                     onDeleteEducation={this.handleDeleteEducation}
                     onDeleteExperience={this.handleDeleteExperience}
-
-
-                />
-                <CVPreview 
-                    personalInfo={personalInfo} 
-                    education={education} 
-                    experience={experience} 
                 />
             </main>
         )

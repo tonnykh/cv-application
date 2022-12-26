@@ -1,0 +1,37 @@
+.CVPreview {
+    font-family: "Work Sans";
+}
+
+.CVPreview-header > *  {
+    /* color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CVPreview-header h1 {
+    gap: 40px;
+    letter-spacing: 14px;
+    font-size: 2.9rem;
+    font-weight: 300;
+    height: 170px;
+
+
+    width: 100%;
+    /* color: var(--dark-text-color); */
+}
+
+.CVPreview-header .first-name {
+    font-weight: 500;
+}
+
+.CVPreview-header .professional-title {
+    /* color: red; */
+    font-family: "Work Sans";
+    font-size: 1.125rem;
+    font-weight: 300;
+    height: 40px;
+    letter-spacing: 3px;
+    background-color: var(--bg-color-light);
+
+}

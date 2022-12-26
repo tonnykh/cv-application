@@ -10,6 +10,10 @@ const inputFields = {
       placeholder: "Last Name",
     },
     {
+      name: "professional_title",
+      placeholder: "Professional Title",
+    },
+    {
       name: "address",
       placeholder: "Address",
     },

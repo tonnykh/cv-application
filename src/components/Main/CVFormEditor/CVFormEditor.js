@@ -20,7 +20,7 @@ const CVFormEditor = (props) => {
 
     console.log(education, "EDITOR EDUCATION____")
         return (
-            <div>
+            <div className="CVFormEditor">
                 <Personal
                     onChange={onChangePersonal}
                     personalInfo={personalInfo}

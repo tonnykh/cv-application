@@ -5,7 +5,7 @@ const Header = (props) =>  {
 
     return(
         <header>
-            <h1>CV Builder</h1>
+            <h2>CV Builder</h2>
             <Button text="Autofill" onClick={autofill} />
         </header>
     )

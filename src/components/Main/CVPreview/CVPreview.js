@@ -8,7 +8,7 @@ const CVPreview = (props) => {
     console.log(education, 'CVPreview-EDUCATION---');
 
     return(
-        <div>
+        <div className="CVPreview">
             <Header personalInfo={personalInfo} />
             <Sidebar personalInfo={personalInfo} education={education} />
             <MainContent personalInfo={personalInfo} experience={experience} />
