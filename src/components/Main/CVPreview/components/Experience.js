@@ -4,11 +4,12 @@ const Experience = (props) => {
     console.log(experienceItem, "__EXPERIENCE___")
 
     return (
-        <section>
-            <p>{experienceItem.position} </p>
-            <p>{experienceItem.company} | {experienceItem.city} | {experienceItem.from}-{experienceItem.to} </p>
+        <div className="experience-item">
+            <h4>{experienceItem.position} </h4>
+            <h5>{experienceItem.company} | {experienceItem.city} </h5>
+            <h5>{experienceItem.from}-{experienceItem.to} </h5>
             <p>{experienceItem.task} </p>
-        </section>
+        </div>
     )
 }
 

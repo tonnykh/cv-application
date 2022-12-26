@@ -9,10 +9,14 @@ const MainContent = (props) => {
 
     return (
         <main className="main">
-            <h3>PROFILE</h3>
-            <p>{personalInfo.description}</p>
-            <h3>WORK EXPERIENCE</h3>
-            {experienceItems}
+            <section className="profile">
+                <h3>PROFILE</h3>
+                <p>{personalInfo.description}</p>
+            </section>
+            <section className="work-experience">
+                <h3>WORK EXPERIENCE</h3>
+                {experienceItems}
+            </section>
         </main>
     )
 }

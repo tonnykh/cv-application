@@ -13,7 +13,7 @@ const exampleData = {
 
     education: [
         {
-            university_name: 'Stanford University',
+            university_name: 'Stanford University,',
             city: 'Palo Alto, California, US',
             degree: 'Master of Science',
             subject: 'Quantum Computing',
@@ -22,7 +22,7 @@ const exampleData = {
             id: uniqid()
         },
         {
-            university_name: 'MIT',
+            university_name: 'MIT,',
             city: 'Cambridge, MA, US',
             degree: 'Bachelor of Science',
             subject: 'Nuclear Science',
