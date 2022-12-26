@@ -1,37 +1,111 @@
 .CVPreview {
     font-family: "Work Sans";
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    grid-template-rows: 220px 1fr;
 }
 
-.CVPreview-header > *  {
+
+/* HEADER */
+
+.header {
+    grid-column: 1/3;
+}
+
+.header > *  {
     /* color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.CVPreview-header h1 {
+.header h1 {
     gap: 40px;
     letter-spacing: 14px;
     font-size: 2.9rem;
     font-weight: 300;
     height: 170px;
-
-
     width: 100%;
     /* color: var(--dark-text-color); */
 }
 
-.CVPreview-header .first-name {
+.header .first-name {
     font-weight: 500;
 }
 
-.CVPreview-header .professional-title {
+.header .professional-title {
     /* color: red; */
     font-family: "Work Sans";
     font-size: 1.125rem;
     font-weight: 300;
-    height: 40px;
+    height: 50px;
     letter-spacing: 3px;
     background-color: var(--bg-color-light);
+}
+
+
+/* SIDEBAR */
+
+.sidebar, .main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 45px 40px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+section h3 {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin-bottom: 16px;
+}
+
+/* contact */
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 0.875rem;
+}
+
+/* education */
+.education {
+    gap: 30px;
+}
+
+.education h3 {
+    margin-bottom: 0;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.education-item h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.education-item p {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+
+/* MAIN */
+main {
 
 }

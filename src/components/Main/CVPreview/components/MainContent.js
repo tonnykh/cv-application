@@ -8,12 +8,12 @@ const MainContent = (props) => {
     })
 
     return (
-        <div>
+        <main className="main">
             <h3>PROFILE</h3>
             <p>{personalInfo.description}</p>
             <h3>WORK EXPERIENCE</h3>
             {experienceItems}
-        </div>
+        </main>
     )
 }
 
