@@ -12,7 +12,7 @@ const Personal = (props) => {
 
     return (
         <form>
-            <h3>Personal Information</h3>
+            <h2>Personal Information</h2>
             {personal.map((personalInput) => {
                 return <Input
                     placeholder={personalInput.placeholder}

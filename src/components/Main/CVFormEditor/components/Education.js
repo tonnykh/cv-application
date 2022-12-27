@@ -1,3 +1,4 @@
+import React from 'react';
 import uniqid from 'uniqid';
 import Button from '../../Utils/Button';
 import EducationItem from './EducationItem';
@@ -8,7 +9,7 @@ const Education = (props) => {
     const educationItems = education.map((educationItem) => {
         return education.length > 1 ? 
             (
-                <div key={educationItem.id}>
+                <React.Fragment key={educationItem.id}>
                     <EducationItem 
                         onChange={onChange} 
                         id={educationItem.id} 
@@ -20,22 +21,22 @@ const Education = (props) => {
                         key={uniqid()}  
                         onClick={() => onDeleteEducation(educationItem.id)}
                     />
-                </div>
+                </React.Fragment>
             )  :    
             ( 
-                <div key={educationItem.id}>
+                <React.Fragment key={educationItem.id}>
                     <EducationItem 
                         onChange={onChange} 
                         id={educationItem.id} 
                         key={educationItem.id} 
                     /> 
-                </div>
+                </React.Fragment>
             );
     })
 
     return (
         <form>
-            <h3>Education</h3>
+            <h2>Education</h2>
             {educationItems}
             <Button text="+ Add" onClick={onAddEducation} />
         </form>

@@ -1,3 +1,4 @@
+import React from 'react';
 import uniqid from 'uniqid';
 import Button from "../../Utils/Button";
 import ExperienceItem from './ExperienceItem';
@@ -10,7 +11,7 @@ const Experience = (props) => {
         console.log(experienceItem, "EXPERIENCE__ITEM");
         return experience.length > 1 ?
         (
-            <div key={experienceItem.id}>
+            <React.Fragment key={experienceItem.id}>
                 <ExperienceItem
                         onChange={onChange}
                         id={experienceItem.id}
@@ -22,22 +23,22 @@ const Experience = (props) => {
                     key={uniqid()}
                     onClick={() => onDeleteExperience(experienceItem.id)}
                 />
-            </div>
+            </React.Fragment>
         ) :
         (
-            <div key={experienceItem.id}>
+            <React.Fragment key={experienceItem.id}>
                 <ExperienceItem
                     onChange={onChange}
                     id={experienceItem.id}
                     key={experienceItem.id}
                 />
-            </div>
+            </React.Fragment>
         );
     })
 
     return (
         <form>
-            <h3>Experience</h3>
+            <h2>Experience</h2>
             {experienceItems}
             <Button text="+ Add" onClick={onAddExperience} />
         </form>
