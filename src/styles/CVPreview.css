@@ -1,17 +1,21 @@
 .CVPreview {
-    font-family: "Work Sans";
+    font-family: "Work Sans", sans-serif;
     display: grid;
-    grid-template-columns: 290px 1fr;
-    grid-template-rows: 220px 1fr;
+    width: 40vw;
+    grid-template-columns: 190px 1fr;
+    grid-template-rows: 150px 1fr;
+    height: 100vh;
 }
 
 
-/* HEADER */
+/* || HEADER || */
 
 .header {
     grid-column: 1/3;
     color: black;
     background-color: white;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
 }
 
 .header > *  {
@@ -23,9 +27,8 @@
 .header h1 {
     gap: 40px;
     letter-spacing: 14px;
-    font-size: 2.9rem;
     font-weight: 300;
-    height: 170px;
+    height: 105px;
     width: 100%;
 }
 
@@ -37,40 +40,44 @@
     font-family: "Work Sans";
     font-size: 1.125rem;
     font-weight: 300;
-    height: 50px;
+    height: 45px;
     letter-spacing: 3px;
     background-color: var(--bg-color-light);
 }
 
+.header h2 {
+    color: black;
+}
 
-/* SIDEBAR */
+
+/* || SIDEBAR || */
 
 .sidebar, .main {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    padding: 45px 40px;
+    gap: 40px;
+    padding: 35px 28px;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
 .sidebar {
-
     background-color: var(--bg-color);
+    border-bottom-left-radius: var(--radius);
 }
 
 section {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
 section h3 {
     color: white;
-    font-size: 1.125rem;
+    font-size: 0.840rem;
     font-weight: 400;
-    letter-spacing: 5px;
-    margin-bottom: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
 }
 
 /* contact */
@@ -81,9 +88,13 @@ section h3 {
     font-size: 0.875rem;
 }
 
+.contact-item p {
+    font-size: 0.75rem;
+}
+
 /* education */
 .education {
-    gap: 30px;
+    gap: 20px;
 }
 
 .education h3 {
@@ -98,38 +109,42 @@ section h3 {
 }
 
 .education-item h4, .experience-item h4 {
-    font-size: 1rem;
+    font-size: 0.813rem;
     font-weight: 500;
     color: white;
     line-height: 1.5;
 }
 
+.education-item h5, .experience-item h5 {
+    font-size: 0.688rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
 .education-item p, .experience-item p {
-    font-size: 0.875rem;
-    line-height: 1.8;
-    font-weight: 300;
+    font-size: 0.625rem;
 }
 
 
-/* MAIN */
+/* || MAIN || */
 
 .main, .main *  {
     background-color: white;
     color: black;
 }
 
-/* profile */
-.profile h3 {
+.main {
+    border-bottom-right-radius: var(--radius);
 }
 
 .profile p {
-    font-size: 0.875rem;
+    font-size: 0.630rem;
     line-height: 1.5;
 }
 
 /* work-experience */
 .work-experience {
-    gap: 30px;
+    gap: 22px;
 }
 
 .work-experience h3 {
@@ -140,12 +155,13 @@ section h3 {
     color: black;
 }
 
-.experience-item h5 {
-    font-size: 0.875rem;
-    font-weight: 400;
-}
-
-.experience-item p {
-    /* font-weight: 300; */
-    /* font-size: 0.8125rem; */
+.main section>h3::after {
+    background-color: gray;
+    border-radius: 1px;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    position: relative;
+    bottom: -10px;
 }

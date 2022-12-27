@@ -1,5 +1,4 @@
-div.App {
-    /* background-color: black; */
-    height: 100vh;
-   
+.App {
+    height: 110vh;
+    background-color: black;   
 }

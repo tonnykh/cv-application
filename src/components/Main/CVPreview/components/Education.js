@@ -6,9 +6,9 @@ const Education = (props) => {
     return (
       <div className="education-item">
         <h4>{educationItem.degree}</h4>
-        <p>{educationItem.subject}</p>
-        <p>{educationItem.university_name}</p>
-        <p>{educationItem.city}</p>
+        <h5>{educationItem.subject}</h5>
+        <h5>{educationItem.university_name}</h5>
+        <h5>{educationItem.city}</h5>
         <p>
           <span>{educationItem.from}</span>-{educationItem.to}
         </p>
