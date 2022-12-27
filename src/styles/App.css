@@ -1,4 +1,5 @@
 .App {
+    /* height: calc(100vh + 2 * 35px); */
     height: 110vh;
     background-color: black;   
 }

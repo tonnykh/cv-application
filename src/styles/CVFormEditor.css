@@ -1,3 +1,14 @@
 .CVFormEditor {
-    font-family: 'Kumbh Sans';
+    font-family: 'Kumbh Sans', sans-serif
+    ;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-right: 250px;
+}
+
+.CVFormEditor form {
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    padding: 20px 35px;
 }

@@ -1,7 +1,18 @@
+main > header {
+    background-color: var(--bg-color);
+    margin-right: 250px;
+    border-radius: var(--radius);
+    padding: 20px 35px;
+    /* display: flex;
+    flex-direction: column;
+    gap: 10px; */
+}
+
 h2 {
   font-size: 2.2rem;
   font-weight: 700;
   font-family: 'Kumbh Sans', sans-serif;
   color: white;
+  margin-bottom: 13px;
 }
 

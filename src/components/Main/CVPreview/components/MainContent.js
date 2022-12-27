@@ -8,7 +8,7 @@ const MainContent = (props) => {
     })
 
     return (
-        <main className="main">
+        <main className="CVPreview-main">
             <section className="profile">
                 <h3>PROFILE</h3>
                 <p>{personalInfo.description}</p>

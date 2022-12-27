@@ -37,40 +37,11 @@ const Experience = (props) => {
 
     return (
         <form>
-            <h2>Experience</h2>
+            <h3>Experience</h3>
             {experienceItems}
-            <Button text="+Add" onClick={onAddExperience} />
+            <Button text="+ Add" onClick={onAddExperience} />
         </form>
     )
 }
 
 export default Experience;
-
-
-
-
-
-
-// const experienceInputs = inputFields.experience;
-// experienceInputs.forEach(field => field.key = uniqid());
-
-// const Experience = (props) => {
-//     const { onChange, onAddExperience, experience, onDeleteExperience } = props;
-
-//     const experienceSections = experience.map((experienceItem) => {
-//         return experienceInputs.map((experienceInput) => {
-//             return <Input placeholder={experienceInput.placeholder} name={experienceInput.name} onChange={(e) => onChange(e, experienceItem.id)} key={experienceInput.key} />
-//         })
-//     })
-
-//     return(
-//         <form>
-//             <h2>Experience</h2>
-//             {experienceSections}
-//             <Button text="+Add" onClick={onAddExperience} />
-//             <Button text="Delete" onClick={() => onDeleteExperience()}/>
-//         </form>
-//     )
-// }
-
-// export default Experience;

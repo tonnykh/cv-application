@@ -9,7 +9,7 @@ const Sidebar = (props) => {
   });
 
   return (
-    <div className="sidebar">
+    <div className="CVPreview-sidebar">
       <section className="contact">
         <h3>CONTACT</h3>
         <Contact personalInfo={personalInfo} />

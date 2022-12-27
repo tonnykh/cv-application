@@ -3,7 +3,7 @@ const Header = (props) => {
     const { personalInfo } = props
 
     return (
-        <header className="header">
+        <header className="CVPreview-header">
             <h1>
                 <span className="first-name">
                     {personalInfo.first_name.toUpperCase()}

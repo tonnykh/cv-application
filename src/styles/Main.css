@@ -1,9 +1,27 @@
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 1fr;
-    padding-top: 1%;
+    grid-template-rows: 140px 1fr;
+    /* padding-top: 1%; */
+    padding: 35px ;
+    row-gap: 35px;
+        background-color: black;   
+
 }
 
 main Header {
+}
+
+button {
+    font-family: 'Kumbh sans';
+    padding: 10px 23px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-text-color);
+        background-color: var(--accent-color);
+    cursor: pointer;
 }

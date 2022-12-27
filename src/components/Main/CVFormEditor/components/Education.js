@@ -35,9 +35,9 @@ const Education = (props) => {
 
     return (
         <form>
-            <h2>Education</h2>
+            <h3>Education</h3>
             {educationItems}
-            <Button text="+Add" onClick={onAddEducation} />
+            <Button text="+ Add" onClick={onAddEducation} />
         </form>
     )
 }
