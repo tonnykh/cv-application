@@ -4,28 +4,20 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
-    margin-right: 250px;
+    max-width: 425px;
 }
 
 .CVFormEditor form {
     background-color: var(--bg-color);
     border-radius: var(--radius);
     padding: 20px 35px;
-    color: white;
-
-    /* display: flex;
-    flex-direction: column;
-    gap: 8px; */
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
 }
 
 .CVFormEditor form h2 {
     font-size: 1.813rem;
     font-weight: 500;
-    margin-bottom: 18px;
+    margin-bottom: 0;
+    grid-column: 1/3;
 }
 
 input, textarea {
@@ -34,5 +26,51 @@ input, textarea {
     border-radius: var(--radius);
     font-family: 'Poppins';
     font-size: 0.875rem;
+    color: var(--text-color);
 }
 
+textarea:focus,
+input:focus {
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+textarea:active,
+input:active {
+  transform: scale(.975);
+}
+
+form.personal,
+form.education .education-item, 
+form.experience .experience-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 12px;
+}
+
+form.personal :last-child,
+form.personal :nth-child(4),
+form.personal :nth-child(5),
+.education-item :nth-child(3),
+.experience-item :nth-child(4),
+.experience-item :nth-child(5) {
+    grid-column: 1/3;
+    resize: none;
+}
+
+form.experience .experience-item :nth-child(6) {
+    grid-column: 1/2;
+}
+
+form.education,
+form.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 50px ;
+}
+
+textarea:hover,
+input:hover {
+  background-color: hsl(0, 0%, 17.5%);
+}

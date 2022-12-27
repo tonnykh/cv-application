@@ -1,10 +1,10 @@
 .CVPreview {
     font-family: "Work Sans", sans-serif;
     display: grid;
-    width: 40vw;
-    grid-template-columns: 190px 1fr;
+    max-width: 40vw;
+    grid-template-columns: minmax(min-content, 190px) 1fr; 
     grid-template-rows: 150px 1fr;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 
@@ -28,8 +28,7 @@
     gap: 40px;
     letter-spacing: 14px;
     font-weight: 300;
-    height: 105px;
-    width: 100%;
+    min-height: 105px;
 }
 
 .CVPreview-header .first-name {
@@ -40,7 +39,7 @@
     font-family: "Work Sans";
     font-size: 1.125rem;
     font-weight: 300;
-    height: 45px;
+    min-height: 45px;
     letter-spacing: 3px;
     background-color: var(--bg-color-light);
 }

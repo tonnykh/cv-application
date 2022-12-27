@@ -1,11 +1,8 @@
 main > header {
     background-color: var(--bg-color);
-    margin-right: 250px;
+    max-width: 425px;
     border-radius: var(--radius);
     padding: 20px 35px;
-    /* display: flex;
-    flex-direction: column;
-    gap: 10px; */
 }
 
 h2 {
@@ -15,4 +12,3 @@ h2 {
   color: white;
   margin-bottom: 13px;
 }
-

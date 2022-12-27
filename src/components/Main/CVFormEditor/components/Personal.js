@@ -11,7 +11,7 @@ const Personal = (props) => {
     console.log(personal, "PERSONAL__ITEM");
 
     return (
-        <form>
+        <form className="personal">
             <h2>Personal Information</h2>
             {personal.map((personalInput) => {
                 return <Input

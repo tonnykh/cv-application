@@ -1,17 +1,13 @@
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr) ) ;
     grid-template-rows: 140px 1fr;
-    /* padding-top: 1%; */
     padding: 35px ;
     row-gap: 35px;
-        background-color: black;   
-
+    background-color: black;   
 }
 
-main Header {
-}
-
+/* button */
 button {
     font-family: 'Kumbh sans';
     padding: 10px 23px;
@@ -21,7 +17,23 @@ button {
     align-items: center;
     font-size: 1rem;
     font-weight: 500;
-    color: var(--dark-text-color);
-        background-color: var(--accent-color);
+    background-color: var(--accent-color);
     cursor: pointer;
+    box-shadow: inset 1px 3px 29px 6px black,
+                inset -2px -13px 8px 17px black,
+                1px -1px 200px 2px var(--accent-color);
+    color: var(--accent-color); 
+    transition: all .5s ease-in-out;
+}
+
+button:active {
+    transform: scale(.95);
+    box-shadow: inset 15px 1px 60px 10px black,
+        -1px -1px 50px 1px rgba(88, 167, 129, 0.201); 
+    color: black;
+}
+
+button:hover {
+    transform: scale(1.044);
+    
 }
