@@ -27,6 +27,11 @@ input, textarea {
     font-family: 'Poppins';
     font-size: 0.875rem;
     color: var(--text-color);
+    width: 100%;
+}
+
+textarea {
+    height: 150px;
 }
 
 textarea:focus,

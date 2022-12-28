@@ -17,8 +17,6 @@ const Input = (props) => {
                 placeholder={placeholder}
                 onChange={(e) => onChange(e)}
                 value={value?.[name]}
-                rows="3"
-                cols="40"
             />
         ): (
             <input 
