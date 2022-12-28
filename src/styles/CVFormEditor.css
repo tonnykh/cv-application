@@ -28,6 +28,7 @@ input, textarea {
     font-size: 0.875rem;
     color: var(--text-color);
     width: 100%;
+    transition: all .3s,transform .2s,-webkit-transform .2s ease-in-out;
 }
 
 textarea {
@@ -43,7 +44,7 @@ input:focus {
 
 textarea:active,
 input:active {
-  transform: scale(.975);
+  transform: scale(.965);
 }
 
 form.personal,
