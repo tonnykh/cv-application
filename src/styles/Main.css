@@ -26,6 +26,8 @@ button {
                 1px -1px 200px 2px var(--accent-color);
     color: var(--accent-color); 
     transition: all .5s ease-in-out;
+
+    gap: 7px;
 }
 
 button:active {
@@ -42,10 +44,19 @@ button:hover {
 
 @media (max-width: 1070px) {
     main {
-        grid-template-columns: repeat(auto-fill, minmax(min-content, 1000px) ) ;
+        grid-template-columns: repeat(auto-fill, max(1000px) ) ;
     }
 
     .CVFormEditor .not-clicked {
         display: none;
+    }
+
+    .main-header {
+        width: min(98vw, 500px) !important;
+    }
+
+    main div.CVFormEditor {
+        width: min(98vw, 500px);
+        /* width: 200px; */
     }
 }

@@ -3,6 +3,8 @@ import uniqid from 'uniqid';
 import Button from '../../Utils/Button';
 import EducationItem from './EducationItem';
 
+import { RiDeleteBin6Line } from "react-icons/ri";
+
 const Education = (props) => {
     const { onChange, onAddEducation, education, onDeleteEducation } = props;
 
@@ -22,6 +24,7 @@ const Education = (props) => {
               text="Delete"
               key={uniqid()}
               onClick={() => onDeleteEducation(educationItem.id)}
+              icon={<RiDeleteBin6Line />}
             />
           </div>
         ) : (

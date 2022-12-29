@@ -1,4 +1,4 @@
-main > header {
+header.main-header {
     background-color: var(--bg-color);
     width: min(98vw, 425px);
     border-radius: var(--radius);
@@ -7,6 +7,7 @@ main > header {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    justify-content: center;
 }
 
 h2 {
@@ -22,7 +23,7 @@ h2 {
     gap: 8px;
     align-items: center;
 }
-header .made-by h3 {
+.main-header .made-by h3 {
     color: white;
     font-weight: 300;
 }
@@ -54,17 +55,17 @@ header .made-by h3 {
     gap: 20px;
 }
 
-.preview-button {
+/* .preview-button {
     display: none;
-}
+} */
 
 @media (max-width: 1070px) {
-     main > header, 
+    .main-header, 
     .CVPreview {
         justify-self: center;
     }
 
-    .preview-button {
+    /* .preview-button {
         display: block;
-    }
+    } */
 }
