@@ -1,209 +1,227 @@
 .CVPreview {
-    font-family: "Work Sans", sans-serif;
-    display: grid;
-    width: 600px;
-    height: 800px;
-    grid-template-columns: minmax(min-content, 190px) 1fr; 
-    grid-template-rows: 150px 1fr;
+  font-family: "Work Sans", sans-serif;
+  display: grid;
+  width: 600px;
+  height: 800px;
+  grid-template-columns: minmax(min-content, 190px) 1fr;
+  grid-template-rows: 150px 1fr;
 }
 
 .CVPreview .clicked {
-    content-visibility: visible;
+  content-visibility: visible;
 }
-
 
 /* || HEADER || */
 
 .CVPreview-header {
-    grid-column: 1/3;
-    color: black;
-    background-color: white;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
+  grid-column: 1/3;
+  color: black;
+  background-color: white;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
-.CVPreview-header > *  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.CVPreview-header > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .CVPreview-header h1 {
-    gap: 40px;
-    letter-spacing: 14px;
-    font-weight: 300;
-    min-height: 105px;
+  gap: 40px;
+  letter-spacing: 14px;
+  font-weight: 300;
+  min-height: 105px;
 }
 
 .CVPreview-header .first-name {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .CVPreview-header .professional-title {
-    font-family: "Work Sans";
-    font-size: 1.125rem;
-    font-weight: 300;
-    min-height: 45px;
-    letter-spacing: 3px;
-    background-color: var(--bg-color-light);
+  font-family: "Work Sans";
+  font-size: 1.125rem;
+  font-weight: 300;
+  min-height: 45px;
+  letter-spacing: 3px;
+  background-color: var(--bg-color-light);
 }
 
 .CVPreview-header h2 {
-    color: black;
+  color: black;
 }
-
 
 /* || SIDEBAR || */
 
-.CVPreview-sidebar, .CVPreview-main {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 35px 28px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+.CVPreview-sidebar,
+.CVPreview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 35px 28px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .CVPreview-sidebar {
-    background-color: var(--bg-color);
-    border-bottom-left-radius: var(--radius);
+  background-color: var(--bg-color);
+  border-bottom-left-radius: var(--radius);
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 section h3 {
-    color: white;
-    font-size: 0.840rem;
-    font-weight: 400;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
+  color: white;
+  font-size: 0.84rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
 }
 
 /* contact */
 .contact-item {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.875rem;
 }
 
 .contact-item p {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 /* education */
 .education {
-    gap: 20px;
+  gap: 20px;
 }
 
 .education h3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-.education-item, .experience-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    line-height: 1.5;
+.education-item,
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.5;
 }
 
-.education-item h4, .experience-item h4 {
-    font-size: 0.813rem;
-    font-weight: 500;
-    color: white;
-    line-height: 1.5;
+.education-item h4,
+.experience-item h4 {
+  font-size: 0.813rem;
+  font-weight: 500;
+  color: white;
+  line-height: 1.5;
 }
 
-.education-item h5, .experience-item h5 {
-    font-size: 0.688rem;
-    font-weight: 400;
-    line-height: 1.5;
+.education-item h5,
+.experience-item h5 {
+  font-size: 0.688rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
-.education-item p, .experience-item p {
-    font-size: 0.625rem;
+.education-item p,
+.experience-item p {
+  font-size: 0.625rem;
 }
-
 
 /* || MAIN || */
 
-.CVPreview-main, .CVPreview-main *  {
-    background-color: white;
-    color: black;
+.CVPreview-main,
+.CVPreview-main * {
+  background-color: white;
+  color: black;
 }
 
 .CVPreview-main {
-    border-bottom-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
 }
 
 .profile p {
-    font-size: 0.630rem;
-    line-height: 1.5;
+  font-size: 0.63rem;
+  line-height: 1.5;
 }
 
 /* work-experience */
 .work-experience {
-    gap: 22px;
+  gap: 22px;
 }
 
 .work-experience h3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .experience-item h4 {
-    color: black;
+  color: black;
 }
 
-.CVPreview-main section>h3::after {
-    background-color: gray;
-    border-radius: 1px;
-    content: "";
-    display: block;
-    height: 2px;
-    width: 50px;
-    position: relative;
-    bottom: -10px;
+.CVPreview-main section > h3::after {
+  background-color: gray;
+  border-radius: 1px;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 50px;
+  position: relative;
+  bottom: -10px;
 }
-
 
 @media (max-width: 1070px) {
-    .CVPreview.not-clicked {
-        display: none;
-    }
+  .CVPreview.not-clicked {
+    display: none;
+  }
 }
 
 @media (max-width: 620px) {
-    .CVPreview {
-        transform: scale(.8);
-        position: absolute;
-        top: 176px;
-    }
+  .CVPreview {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8); /* Safari &amp; Chrome */
+    -moz-transform: scale(0.8); /* Firefox */
+    -ms-transform: scale(0.8); /* Internet Explorer */
+    -o-transform: scale(0.8); /* Opera */
+    position: relative;
+    bottom: 80px;
+  }
 }
 
 @media (max-width: 485px) {
-    .CVPreview {
-        transform: scale(.7);
-        position: absolute;
-        top: 136px;
-    }
+  .CVPreview {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    position: relative;
+    bottom: 120px;
+  }
 }
 
 @media (max-width: 428px) {
-    .CVPreview {
-        transform: scale(.6);
-        position: absolute;
-        top: 96px;
-    }
+  .CVPreview {
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    position: relative;
+    bottom: 160px;
+  }
 }
 
 @media (max-width: 370px) {
-    .CVPreview {
-        transform: scale(.5);
-        position: absolute;
-        top: 56px;
-    }
+  .CVPreview {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    position: relative;
+    bottom: 200px;
+  }
 }
