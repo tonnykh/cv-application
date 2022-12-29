@@ -177,8 +177,6 @@ class Main extends Component {
   };
 
   togglePreview = () => {
-    console.log("Click", this.state.isPreviewVisible);
-
     this.setState({
       isPreviewVisible: !this.state.isPreviewVisible,
     });
