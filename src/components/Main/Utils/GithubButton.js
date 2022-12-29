@@ -5,7 +5,7 @@ const GithubButton = (props) => {
 
   return (
     <a
-      href={`https://github.com/${username}/${projectName}`}
+      href={`https://${username}.github.io/${projectName}/`}
       target="_blank"
       rel="noopener noreferrer"
       className="GithubButton"
