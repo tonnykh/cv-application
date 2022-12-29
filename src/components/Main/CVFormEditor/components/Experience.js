@@ -2,6 +2,7 @@ import React from "react";
 import uniqid from "uniqid";
 import Button from "../../Utils/Button";
 import ExperienceItem from "./ExperienceItem";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Experience = (props) => {
   const { onChange, onAddExperience, experience, onDeleteExperience } = props;
@@ -20,6 +21,7 @@ const Experience = (props) => {
           text="Delete"
           key={uniqid()}
           onClick={() => onDeleteExperience(experienceItem.id)}
+          icon={<RiDeleteBin6Line />}
         />
       </div>
     ) : (
