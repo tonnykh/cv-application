@@ -4,231 +4,219 @@ import CVFormEditor from "./Main/CVFormEditor/index";
 import CVPreview from "./Main/CVPreview/CVPreview";
 import uniqid from "uniqid";
 import exampleData from "./Main/Utils/exampleData";
-import '../styles/Main.css'
-import '../styles/Header.css'
-import '../styles/CVFormEditor.css'
-import '../styles/CVPreview.css'
+import "../styles/Main.css";
+import "../styles/Header.css";
+import "../styles/CVFormEditor.css";
+import "../styles/CVPreview.css";
 
 class Main extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            personalInfo: {
-                first_name: '',
-                last_name: '',
-                professional_title: '',
-                address: '',
-                email: '',
-                phone_number: '',
-                description: ''
-            },
+    this.state = {
+      personalInfo: {
+        first_name: "",
+        last_name: "",
+        professional_title: "",
+        address: "",
+        email: "",
+        phone_number: "",
+        description: "",
+      },
 
-            education: [
-                {
-                    university_name: '',
-                    city: '',
-                    degree: '',
-                    subject: '',
-                    from: '',
-                    to: '',
-                    id: uniqid()
-                }
-            ],
+      education: [
+        {
+          university_name: "",
+          city: "",
+          degree: "",
+          subject: "",
+          from: "",
+          to: "",
+          id: uniqid(),
+        },
+      ],
 
-            experience: [
-                {
-                    position: '',
-                    company: '',
-                    task: '',
-                    city: '',
-                    from: '',
-                    to: '',
-                    id: uniqid()
-                }
-            ],
+      experience: [
+        {
+          position: "",
+          company: "",
+          task: "",
+          city: "",
+          from: "",
+          to: "",
+          id: uniqid(),
+        },
+      ],
 
-            newEducation: {
-                university_name: '',
-                city: '',
-                degree: '',
-                subject: '',
-                from: '',
-                to: '',
-                id: uniqid()
-            },
+      newEducation: {
+        university_name: "",
+        city: "",
+        degree: "",
+        subject: "",
+        from: "",
+        to: "",
+        id: uniqid(),
+      },
 
-            newExperience: {
-                position: '',
-                company: '',
-                task: '',
-                city: '',
-                from: '',
-                to: '',
-                id: uniqid()
-            },
+      newExperience: {
+        position: "",
+        company: "",
+        task: "",
+        city: "",
+        from: "",
+        to: "",
+        id: uniqid(),
+      },
 
-            isPreviewVisible: false,
-        }
-
-        this.handleChangePersonalInfo = this.handleChangePersonalInfo.bind(this);
-        this.handleChangeEducation = this.handleChangeEducation.bind(this);
-        this.handleChangeExperience = this.handleChangeExperience.bind(this);
-
-        this.handleAddEducation = this.handleAddEducation.bind(this);
-        this.handleAddExperience = this.handleAddExperience.bind(this);
-
-        this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
-        this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
-
-        this.togglePreview = this.togglePreview.bind(this);
-    }
-
-    handleChangePersonalInfo = (e) => {
-        let newPersonalInfo = {
-            ...this.state.personalInfo,
-            [e.target.name]: e.target.value
-        }
-
-        console.log(e.target.value, '___VALUE___');
-
-        this.setState({
-            personalInfo: newPersonalInfo
-        });
-        console.log(newPersonalInfo, 'NEWINFO');
-
+      isPreviewVisible: false,
     };
 
-    handleChangeEducation = (e, id) => {
-        const newEducation = this.state.education.map(educationItem => {
-            if (educationItem.id === id) {
-                return { ...educationItem, [e.target.name]: e.target.value };
-            } else {
-                return educationItem;
-            }
-        })
- 
-        this.setState({
-            education: newEducation
-        }, () => console.log(this.state.education, '1----EDUCATION___'));
+    this.handleChangePersonalInfo = this.handleChangePersonalInfo.bind(this);
+    this.handleChangeEducation = this.handleChangeEducation.bind(this);
+    this.handleChangeExperience = this.handleChangeExperience.bind(this);
 
-        console.log(id, 'TARGET____ID');
-        console.log(this.state.education, "EDUCATION______");
-    }
+    this.handleAddEducation = this.handleAddEducation.bind(this);
+    this.handleAddExperience = this.handleAddExperience.bind(this);
 
-    handleChangeExperience = (e, id) => {
-        const newExperience = this.state.experience.map(experienceItem => {
-            if (experienceItem.id === id) {
-                return { ...experienceItem, [e.target.name]: e.target.value };
-            } else {
-                return experienceItem;
-            }
-        })
+    this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
+    this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
 
-        this.setState({
-            experience: newExperience
-        }, () => console.log(this.state.experience, '1---EXPERIENCE___'));
-    }
+    this.togglePreview = this.togglePreview.bind(this);
+  }
 
-    handleAddEducation = (e) => {
-        e.preventDefault();
-    
-        this.setState(prevState => ({
-            education: [
-                ...prevState.education, prevState.newEducation
-            ],
-            newEducation: {
-                ...prevState.newEducation, id: uniqid()
-            }
-        }), () => console.log(Object.keys(this.state.education).length));
-    }
- 
-    handleAddExperience = (e) => {
-        e.preventDefault();
+  handleChangePersonalInfo = (e) => {
+    let newPersonalInfo = {
+      ...this.state.personalInfo,
+      [e.target.name]: e.target.value,
+    };
 
-        this.setState(prevState => ({
-            experience: [
-                ...prevState.experience, prevState.newExperience
-            ],
-            newExperience: {
-                ...prevState.newExperience, id: uniqid()
-            }
-        }), () => console.log(Object.keys(this.state.education).length));
-    }
+    this.setState({
+      personalInfo: newPersonalInfo,
+    });
+  };
 
-    handleDeleteEducation = (id) => {
-        const newEducation = this.state.education.filter(
-            (educationItem) => educationItem.id !== id
-        )
+  handleChangeEducation = (e, id) => {
+    const newEducation = this.state.education.map((educationItem) => {
+      if (educationItem.id === id) {
+        return { ...educationItem, [e.target.name]: e.target.value };
+      } else {
+        return educationItem;
+      }
+    });
 
-        this.setState({
-            education: [...newEducation]
-        }, () => console.log(newEducation, "EduCation_____00")
-        )
-    }
+    this.setState({
+      education: newEducation,
+    });
+  };
 
-    handleDeleteExperience = (id) => {
-        const newExperience = this.state.experience.filter(
-            (experienceItem) => experienceItem.id !== id
-        )
+  handleChangeExperience = (e, id) => {
+    const newExperience = this.state.experience.map((experienceItem) => {
+      if (experienceItem.id === id) {
+        return { ...experienceItem, [e.target.name]: e.target.value };
+      } else {
+        return experienceItem;
+      }
+    });
 
-        this.setState({
-            experience: [...newExperience]
-        })
-    }
+    this.setState({
+      experience: newExperience,
+    });
+  };
 
-    handleAutofill = (e) => {
-        this.setState({
-            ...this.state,
-            personalInfo: exampleData.personalInfo,
-            education: exampleData.education,
-            experience: exampleData.experience,
-        })
-    }
+  handleAddEducation = (e) => {
+    e.preventDefault();
 
-    togglePreview = () => {
-        console.log("Click", this.state.isPreviewVisible);
+    this.setState((prevState) => ({
+      education: [...prevState.education, prevState.newEducation],
+      newEducation: {
+        ...prevState.newEducation,
+        id: uniqid(),
+      },
+    }));
+  };
 
-        this.setState(
-            {
-                isPreviewVisible: !this.state.isPreviewVisible
-            }, () => console.log(this.state.isPreviewVisible)
-        )
-    }
-   
+  handleAddExperience = (e) => {
+    e.preventDefault();
 
-    render() {
-        const { personalInfo, education, experience, isPreviewVisible } = this.state;
+    this.setState((prevState) => ({
+      experience: [...prevState.experience, prevState.newExperience],
+      newExperience: {
+        ...prevState.newExperience,
+        id: uniqid(),
+      },
+    }));
+  };
 
-        return (
-          <main>
-            <Header
-              autofill={this.handleAutofill}
-              preview={this.togglePreview}
-              state={isPreviewVisible}
-            />
-            <CVPreview
-              personalInfo={personalInfo}
-              education={education}
-              experience={experience}
-              state={isPreviewVisible}
-            />
-            <CVFormEditor
-              onChangePersonal={this.handleChangePersonalInfo}
-              onChangeEducation={this.handleChangeEducation}
-              onChangeExperience={this.handleChangeExperience}
-              onAddEducation={this.handleAddEducation}
-              onAddExperience={this.handleAddExperience}
-              education={education}
-              experience={experience}
-              personalInfo={personalInfo}
-              onDeleteEducation={this.handleDeleteEducation}
-              onDeleteExperience={this.handleDeleteExperience}
-              state={isPreviewVisible}
-            />
-          </main>
-        );
-    }
+  handleDeleteEducation = (id) => {
+    const newEducation = this.state.education.filter(
+      (educationItem) => educationItem.id !== id
+    );
+
+    this.setState({
+      education: [...newEducation],
+    });
+  };
+
+  handleDeleteExperience = (id) => {
+    const newExperience = this.state.experience.filter(
+      (experienceItem) => experienceItem.id !== id
+    );
+
+    this.setState({
+      experience: [...newExperience],
+    });
+  };
+
+  handleAutofill = (e) => {
+    this.setState({
+      ...this.state,
+      personalInfo: exampleData.personalInfo,
+      education: exampleData.education,
+      experience: exampleData.experience,
+    });
+  };
+
+  togglePreview = () => {
+    console.log("Click", this.state.isPreviewVisible);
+
+    this.setState({
+      isPreviewVisible: !this.state.isPreviewVisible,
+    });
+  };
+
+  render() {
+    const { personalInfo, education, experience, isPreviewVisible } =
+      this.state;
+
+    return (
+      <main>
+        <Header
+          autofill={this.handleAutofill}
+          preview={this.togglePreview}
+          state={isPreviewVisible}
+        />
+        <CVPreview
+          personalInfo={personalInfo}
+          education={education}
+          experience={experience}
+          state={isPreviewVisible}
+        />
+        <CVFormEditor
+          onChangePersonal={this.handleChangePersonalInfo}
+          onChangeEducation={this.handleChangeEducation}
+          onChangeExperience={this.handleChangeExperience}
+          onAddEducation={this.handleAddEducation}
+          onAddExperience={this.handleAddExperience}
+          education={education}
+          experience={experience}
+          personalInfo={personalInfo}
+          onDeleteEducation={this.handleDeleteEducation}
+          onDeleteExperience={this.handleDeleteExperience}
+          state={isPreviewVisible}
+        />
+      </main>
+    );
+  }
 }
 
 export default Main;

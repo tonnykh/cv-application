@@ -8,19 +8,7 @@
 }
 
 .CVPreview .clicked {
-    /* display: normal; */
     content-visibility: visible;
-}
-
-/* .CVPreview .not-clicked {
-    content-visibility: visible;
-} */
-
-@media (max-width: 1070px) {
-    .CVPreview.not-clicked {
-        display: none;
-
-    }
 }
 
 
@@ -181,6 +169,12 @@ section h3 {
     bottom: -10px;
 }
 
+
+@media (max-width: 1070px) {
+    .CVPreview.not-clicked {
+        display: none;
+    }
+}
 
 @media (max-width: 620px) {
     .CVPreview {

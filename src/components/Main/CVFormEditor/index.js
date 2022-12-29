@@ -1,1 +1,1 @@
-export { default } from './CVFormEditor';
+export { default } from "./CVFormEditor";

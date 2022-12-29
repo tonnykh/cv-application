@@ -1,62 +1,59 @@
 main {
-    display: grid;
-    grid-template-columns: 450px 1fr;
-    grid-template-rows: 186px 1fr;
-    padding: 35px clamp(1px, 35px, 1%);
-    row-gap: 35px;
-    background-color: black;   
-    justify-items: center;
-    justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  grid-template-rows: 186px 1fr;
+  padding: 35px clamp(1px, 35px, 1%);
+  row-gap: 35px;
+  background-color: black;
+  justify-items: center;
+  justify-content: space-evenly;
 }
 
 /* button */
 button {
-    font-family: 'Kumbh sans';
-    padding: 10px 23px;
-    border-radius: var(--radius);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 500;
-    background-color: var(--accent-color);
-    cursor: pointer;
-    box-shadow: inset 1px 3px 29px 6px black,
-                inset -2px -13px 8px 17px black,
-                1px -1px 200px 2px var(--accent-color);
-    color: var(--accent-color); 
-    transition: all .5s ease-in-out;
-
-    gap: 7px;
+  font-family: "Kumbh sans";
+  padding: 10px 23px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: inset 1px 3px 29px 6px black, 
+    inset -2px -13px 8px 17px black,
+    1px -1px 200px 2px var(--accent-color);
+  color: var(--accent-color);
+  transition: all 0.5s ease-in-out;
+  gap: 7px;
 }
 
 button:active {
-    transform: scale(.95);
-    box-shadow: inset 15px 1px 60px 10px black,
-        -1px -1px 50px 1px rgba(88, 167, 129, 0.201); 
-    color: black;
+  transform: scale(0.95);
+  box-shadow: inset 15px 1px 60px 10px black,
+    -1px -1px 50px 1px rgba(88, 167, 129, 0.201);
+  color: black;
 }
 
 button:hover {
-    transform: scale(1.044);
+  transform: scale(1.044);
 }
 
-
 @media (max-width: 1070px) {
-    main {
-        grid-template-columns: repeat(auto-fill, max(1000px) ) ;
-    }
+  main {
+    grid-template-columns: repeat(auto-fill, max(1000px));
+  }
 
-    .CVFormEditor .not-clicked {
-        display: none;
-    }
+  .CVFormEditor .not-clicked {
+    display: none;
+  }
 
-    .main-header {
-        width: min(98vw, 500px) !important;
-    }
+  .main-header {
+    width: min(98vw, 500px) !important;
+  }
 
-    main div.CVFormEditor {
-        width: min(98vw, 500px);
-        /* width: 200px; */
-    }
+  main div.CVFormEditor {
+    width: min(98vw, 500px);
+  }
 }
