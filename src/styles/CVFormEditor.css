@@ -80,3 +80,10 @@ textarea:hover,
 input:hover {
   background-color: hsl(0, 0%, 17.5%);
 }
+
+
+@media (max-width: 1070px) {
+    .CVFormEditor.not-clicked {
+        display: none;
+    }
+}

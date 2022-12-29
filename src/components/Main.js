@@ -66,7 +66,9 @@ class Main extends Component {
                 from: '',
                 to: '',
                 id: uniqid()
-            }
+            },
+
+            isPreviewVisible: false,
         }
 
         this.handleChangePersonalInfo = this.handleChangePersonalInfo.bind(this);
@@ -79,6 +81,7 @@ class Main extends Component {
         this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
         this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
 
+        this.togglePreview = this.togglePreview.bind(this);
     }
 
     handleChangePersonalInfo = (e) => {
@@ -183,39 +186,48 @@ class Main extends Component {
         })
     }
 
+    togglePreview = () => {
+        console.log("Click", this.state.isPreviewVisible);
+
+        this.setState(
+            {
+                isPreviewVisible: !this.state.isPreviewVisible
+            }, () => console.log(this.state.isPreviewVisible)
+        )
+    }
    
 
-
     render() {
-        const { personalInfo, education, experience } = this.state;
+        const { personalInfo, education, experience, isPreviewVisible } = this.state;
 
-        return(
-            <main>
-                <Header
-                    autofill={this.handleAutofill}
-                />   
-                <CVPreview 
-                    personalInfo={personalInfo} 
-                    education={education} 
-                    experience={experience} 
-                />
-                <CVFormEditor 
-                    onChangePersonal={this.handleChangePersonalInfo} 
-                    onChangeEducation={this.handleChangeEducation} 
-                    onChangeExperience={this.handleChangeExperience} 
-
-                    onAddEducation={this.handleAddEducation} 
-                    onAddExperience={this.handleAddExperience}
-
-                    education={education}
-                    experience={experience}
-                    personalInfo={personalInfo}
-
-                    onDeleteEducation={this.handleDeleteEducation}
-                    onDeleteExperience={this.handleDeleteExperience}
-                />
-            </main>
-        )
+        return (
+          <main>
+            <Header
+              autofill={this.handleAutofill}
+              preview={this.togglePreview}
+              state={isPreviewVisible}
+            />
+            <CVPreview
+              personalInfo={personalInfo}
+              education={education}
+              experience={experience}
+              state={isPreviewVisible}
+            />
+            <CVFormEditor
+              onChangePersonal={this.handleChangePersonalInfo}
+              onChangeEducation={this.handleChangeEducation}
+              onChangeExperience={this.handleChangeExperience}
+              onAddEducation={this.handleAddEducation}
+              onAddExperience={this.handleAddExperience}
+              education={education}
+              experience={experience}
+              personalInfo={personalInfo}
+              onDeleteEducation={this.handleDeleteEducation}
+              onDeleteExperience={this.handleDeleteExperience}
+              state={isPreviewVisible}
+            />
+          </main>
+        );
     }
 }
 

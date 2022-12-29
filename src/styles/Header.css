@@ -13,11 +13,18 @@ h2 {
   margin-bottom: 13px;
 }
 
+.preview-button {
+    display: none;
+}
 
 @media (max-width: 1070px) {
      main > header, 
     .CVPreview {
         justify-self: center;
+    }
+
+    .preview-button {
+        display: block;
     }
 }
 

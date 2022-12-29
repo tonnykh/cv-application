@@ -44,4 +44,9 @@ button:hover {
     main {
         grid-template-columns: repeat(auto-fill, minmax(min-content, 1000px) ) ;
     }
+
+    .CVFormEditor .not-clicked {
+        display: none;
+    }
+    
 }

@@ -7,6 +7,22 @@
     grid-template-rows: 150px 1fr;
 }
 
+.CVPreview .clicked {
+    /* display: normal; */
+    content-visibility: visible;
+}
+
+/* .CVPreview .not-clicked {
+    content-visibility: visible;
+} */
+
+@media (max-width: 1070px) {
+    .CVPreview.not-clicked {
+        display: none;
+
+    }
+}
+
 
 /* || HEADER || */
 

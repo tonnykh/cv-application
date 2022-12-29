@@ -1,9 +1,14 @@
 
 const Button = (props) => {
-    const { text, onClick } = props
+    const { text, onClick, className = '' } = props
     
     return (
-        <button onClick={(e) => onClick(e)}>{text}</button>
+        <button
+            className={className}
+            onClick={(e) => onClick(e)}
+        >
+            {text}
+        </button>
     )
 }
 
