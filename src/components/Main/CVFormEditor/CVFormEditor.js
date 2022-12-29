@@ -17,7 +17,6 @@ const CVFormEditor = (props) => {
     state,
   } = props;
 
-  console.log(education, "EDITOR EDUCATION____");
   return (
     <div className={`CVFormEditor ${!state ? "clicked" : "not-clicked"}`}>
       <Personal onChange={onChangePersonal} personalInfo={personalInfo} />

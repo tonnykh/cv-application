@@ -8,8 +8,6 @@ personal.forEach((field) => (field.key = uniqid()));
 const Personal = (props) => {
   const { onChange, personalInfo } = props;
 
-  console.log(personal, "PERSONAL__ITEM");
-
   return (
     <form className="personal">
       <h2>Personal Information</h2>
