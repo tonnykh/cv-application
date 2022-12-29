@@ -1,7 +1,7 @@
 main {
     display: grid;
     grid-template-columns: 450px 1fr;
-    grid-template-rows: 140px 1fr;
+    grid-template-rows: 186px 1fr;
     padding: 35px clamp(1px, 35px, 1%);
     row-gap: 35px;
     background-color: black;   
@@ -48,5 +48,4 @@ button:hover {
     .CVFormEditor .not-clicked {
         display: none;
     }
-    
 }

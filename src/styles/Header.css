@@ -1,8 +1,12 @@
 main > header {
     background-color: var(--bg-color);
-    width: 425px;
+    width: min(98vw, 425px);
     border-radius: var(--radius);
     padding: 20px 35px;
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 h2 {
@@ -10,7 +14,44 @@ h2 {
   font-weight: 700;
   font-family: 'Kumbh Sans', sans-serif;
   color: white;
-  margin-bottom: 13px;
+  line-height: 1;
+}
+
+.made-by {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+header .made-by h3 {
+    color: white;
+    font-weight: 300;
+}
+
+.GithubButton {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: var(--radius);
+  padding: 7px;
+  background-color: hsl(0, 0%, 16%);
+  align-items: center;
+}
+
+.GithubButton:hover {
+    color: var(--accent-color);
+    background-color:  hsl(0, 0%, 17.5%);
+}
+
+.GithubButton svg {
+    color: white;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 20px;
 }
 
 .preview-button {
@@ -25,11 +66,5 @@ h2 {
 
     .preview-button {
         display: block;
-    }
-}
-
-@media (max-width: 428px) {
-    main > header {
-        width: 260px;
     }
 }
